@@ -12,7 +12,7 @@
 		C8C1A32F2645BDB2006B3B16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A32E2645BDB2006B3B16 /* Assets.xcassets */; };
 		C8C1A33D2645BDB2006B3B16 /* BoostTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A33C2645BDB2006B3B16 /* BoostTestTests.swift */; };
 		C8C1A3482645BDB2006B3B16 /* BoostTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3472645BDB2006B3B16 /* BoostTestUITests.swift */; };
-		C8C1A3642645BF83006B3B16 /* ContactTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3632645BF83006B3B16 /* ContactTableViewModel.swift */; };
+		C8C1A3642645BF83006B3B16 /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3632645BF83006B3B16 /* ContactListViewModel.swift */; };
 		C8C1A3762645C042006B3B16 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3752645C042006B3B16 /* Routing.swift */; };
 		C8C1A3A32645C331006B3B16 /* ContactListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3A12645C331006B3B16 /* ContactListVC.swift */; };
 		C8C1A3A42645C331006B3B16 /* ContactListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A3A22645C331006B3B16 /* ContactListVC.xib */; };
@@ -23,6 +23,9 @@
 		C8C1A3C02645D593006B3B16 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3BF2645D593006B3B16 /* UIImage.swift */; };
 		C8C1A3D22645D8BE006B3B16 /* ContactDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3D02645D8BE006B3B16 /* ContactDetailVC.swift */; };
 		C8C1A3D32645D8BE006B3B16 /* ContactDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A3D12645D8BE006B3B16 /* ContactDetailVC.xib */; };
+		C8C1A3DE2645DC10006B3B16 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A3DD2645DC10006B3B16 /* data.json */; };
+		C8C1A3E42645DC41006B3B16 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3E32645DC41006B3B16 /* Profile.swift */; };
+		C8C1A3ED2645DCE6006B3B16 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3EC2645DCE6006B3B16 /* ProfileService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +57,7 @@
 		C8C1A3432645BDB2006B3B16 /* BoostTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoostTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C1A3472645BDB2006B3B16 /* BoostTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoostTestUITests.swift; sourceTree = "<group>"; };
 		C8C1A3492645BDB2006B3B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8C1A3632645BF83006B3B16 /* ContactTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewModel.swift; sourceTree = "<group>"; };
+		C8C1A3632645BF83006B3B16 /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
 		C8C1A3752645C042006B3B16 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
 		C8C1A3A12645C331006B3B16 /* ContactListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListVC.swift; sourceTree = "<group>"; };
 		C8C1A3A22645C331006B3B16 /* ContactListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactListVC.xib; sourceTree = "<group>"; };
@@ -65,6 +68,9 @@
 		C8C1A3BF2645D593006B3B16 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		C8C1A3D02645D8BE006B3B16 /* ContactDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailVC.swift; sourceTree = "<group>"; };
 		C8C1A3D12645D8BE006B3B16 /* ContactDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDetailVC.xib; sourceTree = "<group>"; };
+		C8C1A3DD2645DC10006B3B16 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		C8C1A3E32645DC41006B3B16 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		C8C1A3EC2645DCE6006B3B16 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,8 @@
 		C8C1A35F2645BE5F006B3B16 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C8C1A3EB2645DCDA006B3B16 /* Services */,
+				C8C1A3E22645DC27006B3B16 /* ReponseDataType */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -169,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				C8C1A3A82645C33F006B3B16 /* Cell */,
-				C8C1A3632645BF83006B3B16 /* ContactTableViewModel.swift */,
+				C8C1A3632645BF83006B3B16 /* ContactListViewModel.swift */,
 				C8C1A3A12645C331006B3B16 /* ContactListVC.swift */,
 				C8C1A3A22645C331006B3B16 /* ContactListVC.xib */,
 			);
@@ -224,6 +232,7 @@
 		C8C1A3842645C217006B3B16 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C8C1A3DD2645DC10006B3B16 /* data.json */,
 				C8C1A32E2645BDB2006B3B16 /* Assets.xcassets */,
 				C8C1A3BA2645D2C0006B3B16 /* AppTheme.swift */,
 			);
@@ -246,6 +255,22 @@
 				C8C1A3BF2645D593006B3B16 /* UIImage.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		C8C1A3E22645DC27006B3B16 /* ReponseDataType */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A3E32645DC41006B3B16 /* Profile.swift */,
+			);
+			path = ReponseDataType;
+			sourceTree = "<group>";
+		};
+		C8C1A3EB2645DCDA006B3B16 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A3EC2645DCE6006B3B16 /* ProfileService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +379,7 @@
 				C8C1A3D32645D8BE006B3B16 /* ContactDetailVC.xib in Resources */,
 				C8C1A3AD2645C3D3006B3B16 /* ContactCell.xib in Resources */,
 				C8C1A32F2645BDB2006B3B16 /* Assets.xcassets in Resources */,
+				C8C1A3DE2645DC10006B3B16 /* data.json in Resources */,
 				C8C1A3A42645C331006B3B16 /* ContactListVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,12 +407,14 @@
 			files = (
 				C8C1A3AC2645C3D3006B3B16 /* ContactCell.swift in Sources */,
 				C8C1A3762645C042006B3B16 /* Routing.swift in Sources */,
-				C8C1A3642645BF83006B3B16 /* ContactTableViewModel.swift in Sources */,
+				C8C1A3642645BF83006B3B16 /* ContactListViewModel.swift in Sources */,
 				C8C1A3262645BDAF006B3B16 /* AppDelegate.swift in Sources */,
 				C8C1A3282645BDAF006B3B16 /* SceneDelegate.swift in Sources */,
+				C8C1A3ED2645DCE6006B3B16 /* ProfileService.swift in Sources */,
 				C8C1A3BB2645D2C0006B3B16 /* AppTheme.swift in Sources */,
 				C8C1A3C02645D593006B3B16 /* UIImage.swift in Sources */,
 				C8C1A3B62645C48F006B3B16 /* TableViewCell.swift in Sources */,
+				C8C1A3E42645DC41006B3B16 /* Profile.swift in Sources */,
 				C8C1A3D22645D8BE006B3B16 /* ContactDetailVC.swift in Sources */,
 				C8C1A3A32645C331006B3B16 /* ContactListVC.swift in Sources */,
 			);
