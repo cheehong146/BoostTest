@@ -21,6 +21,8 @@
 		C8C1A3B62645C48F006B3B16 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3B52645C48F006B3B16 /* TableViewCell.swift */; };
 		C8C1A3BB2645D2C0006B3B16 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3BA2645D2C0006B3B16 /* AppTheme.swift */; };
 		C8C1A3C02645D593006B3B16 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3BF2645D593006B3B16 /* UIImage.swift */; };
+		C8C1A3D22645D8BE006B3B16 /* ContactDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3D02645D8BE006B3B16 /* ContactDetailVC.swift */; };
+		C8C1A3D32645D8BE006B3B16 /* ContactDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A3D12645D8BE006B3B16 /* ContactDetailVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		C8C1A3B52645C48F006B3B16 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C8C1A3BA2645D2C0006B3B16 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		C8C1A3BF2645D593006B3B16 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		C8C1A3D02645D8BE006B3B16 /* ContactDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailVC.swift; sourceTree = "<group>"; };
+		C8C1A3D12645D8BE006B3B16 /* ContactDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDetailVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,8 @@
 		C8C1A3742645BFEF006B3B16 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				C8C1A3D02645D8BE006B3B16 /* ContactDetailVC.swift */,
+				C8C1A3D12645D8BE006B3B16 /* ContactDetailVC.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C1A3D32645D8BE006B3B16 /* ContactDetailVC.xib in Resources */,
 				C8C1A3AD2645C3D3006B3B16 /* ContactCell.xib in Resources */,
 				C8C1A32F2645BDB2006B3B16 /* Assets.xcassets in Resources */,
 				C8C1A3A42645C331006B3B16 /* ContactListVC.xib in Resources */,
@@ -380,6 +387,7 @@
 				C8C1A3BB2645D2C0006B3B16 /* AppTheme.swift in Sources */,
 				C8C1A3C02645D593006B3B16 /* UIImage.swift in Sources */,
 				C8C1A3B62645C48F006B3B16 /* TableViewCell.swift in Sources */,
+				C8C1A3D22645D8BE006B3B16 /* ContactDetailVC.swift in Sources */,
 				C8C1A3A32645C331006B3B16 /* ContactListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

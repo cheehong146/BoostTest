@@ -34,8 +34,7 @@ class ContactListVC: UIViewController {
 
     // MARK: -  Actions
     @objc func onAddContactBtnPress(_ gesture: UITapGestureRecognizer) {
-        // TODO add contact action
-        print("😀")
+        self.openAddContact()
     }
 }
 

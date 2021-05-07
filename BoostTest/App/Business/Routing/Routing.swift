@@ -50,13 +50,29 @@ extension UIViewController {
         
         window.changeRootViewController(to: desiredViewController)
     }
+    
+    func pushOnNVC(animated: Bool = true, vc: UIViewController) {
+        guard let nvc = self.navigationController else {
+            return
+        }
+        nvc.pushViewController(vc, animated: animated)
+    }
 }
 
 extension UIWindow {
     
     func openContactList() {
-        
         let vc = ContactListVC()
         self.changeRootViewController(to: vc)
     }
+}
+
+extension UIViewController {
+    
+    func openAddContact() {
+        let vc = ContactDetailVC()
+        self.pushOnNVC(vc: vc)
+    }
+    
+  
 }
