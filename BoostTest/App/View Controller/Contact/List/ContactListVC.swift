@@ -8,15 +8,18 @@
 import UIKit
 
 class ContactListVC: UIViewController {
-
+    
     // MARK: -  IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
+    var viewModel: ContactListViewModel {
+        return ContactListViewModel()
+    }
     
     // MARK: -  Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupView()
     }
     
@@ -31,7 +34,7 @@ class ContactListVC: UIViewController {
         addContactBarBtn.tintColor = AppTheme.primaryColor
         navigationItem.rightBarButtonItem = addContactBarBtn
     }
-
+    
     // MARK: -  Actions
     @objc func onAddContactBtnPress(_ gesture: UITapGestureRecognizer) {
         self.openAddContact()
@@ -40,21 +43,15 @@ class ContactListVC: UIViewController {
 
 // MARK: -  UITableViewDelegate, UITableViewDataSource
 extension ContactListVC: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO get data from VM
-        return 3
+        return viewModel.getListOfContacts().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.reuseIdentifier(), for: indexPath) as? ContactCell else { return .init() }
-        // TODO get data from VM
-        cell.updateUI(name: "Test", profilePicture: nil)
+        let profile = viewModel.getListOfContacts()[indexPath.row]
+        cell.updateUI(name: "\(profile.firstName ?? "") \(profile.lastName ?? "")", profilePicture: nil)
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return
-//    }
-    
-    
 }
