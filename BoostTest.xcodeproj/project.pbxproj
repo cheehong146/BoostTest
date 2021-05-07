@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		C8C1A3262645BDAF006B3B16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3252645BDAF006B3B16 /* AppDelegate.swift */; };
 		C8C1A3282645BDAF006B3B16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3272645BDAF006B3B16 /* SceneDelegate.swift */; };
-		C8C1A32A2645BDAF006B3B16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3292645BDAF006B3B16 /* ViewController.swift */; };
-		C8C1A32D2645BDAF006B3B16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A32B2645BDAF006B3B16 /* Main.storyboard */; };
 		C8C1A32F2645BDB2006B3B16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A32E2645BDB2006B3B16 /* Assets.xcassets */; };
-		C8C1A3322645BDB2006B3B16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A3302645BDB2006B3B16 /* LaunchScreen.storyboard */; };
 		C8C1A33D2645BDB2006B3B16 /* BoostTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A33C2645BDB2006B3B16 /* BoostTestTests.swift */; };
 		C8C1A3482645BDB2006B3B16 /* BoostTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3472645BDB2006B3B16 /* BoostTestUITests.swift */; };
+		C8C1A3642645BF83006B3B16 /* ContactTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3632645BF83006B3B16 /* ContactTableViewModel.swift */; };
+		C8C1A3762645C042006B3B16 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3752645C042006B3B16 /* Routing.swift */; };
+		C8C1A3A32645C331006B3B16 /* ContactListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3A12645C331006B3B16 /* ContactListVC.swift */; };
+		C8C1A3A42645C331006B3B16 /* ContactListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A3A22645C331006B3B16 /* ContactListVC.xib */; };
+		C8C1A3AC2645C3D3006B3B16 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3AA2645C3D3006B3B16 /* ContactCell.swift */; };
+		C8C1A3AD2645C3D3006B3B16 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A3AB2645C3D3006B3B16 /* ContactCell.xib */; };
+		C8C1A3B62645C48F006B3B16 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3B52645C48F006B3B16 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +42,7 @@
 		C8C1A3222645BDAF006B3B16 /* BoostTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C1A3252645BDAF006B3B16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8C1A3272645BDAF006B3B16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C8C1A3292645BDAF006B3B16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C8C1A32C2645BDAF006B3B16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8C1A32E2645BDB2006B3B16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C8C1A3312645BDB2006B3B16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8C1A3332645BDB2006B3B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C1A3382645BDB2006B3B16 /* BoostTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoostTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C1A33C2645BDB2006B3B16 /* BoostTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoostTestTests.swift; sourceTree = "<group>"; };
@@ -49,6 +50,13 @@
 		C8C1A3432645BDB2006B3B16 /* BoostTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoostTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C1A3472645BDB2006B3B16 /* BoostTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoostTestUITests.swift; sourceTree = "<group>"; };
 		C8C1A3492645BDB2006B3B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8C1A3632645BF83006B3B16 /* ContactTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewModel.swift; sourceTree = "<group>"; };
+		C8C1A3752645C042006B3B16 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		C8C1A3A12645C331006B3B16 /* ContactListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListVC.swift; sourceTree = "<group>"; };
+		C8C1A3A22645C331006B3B16 /* ContactListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactListVC.xib; sourceTree = "<group>"; };
+		C8C1A3AA2645C3D3006B3B16 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		C8C1A3AB2645C3D3006B3B16 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
+		C8C1A3B52645C48F006B3B16 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +107,9 @@
 		C8C1A3242645BDAF006B3B16 /* BoostTest */ = {
 			isa = PBXGroup;
 			children = (
-				C8C1A3252645BDAF006B3B16 /* AppDelegate.swift */,
-				C8C1A3272645BDAF006B3B16 /* SceneDelegate.swift */,
-				C8C1A3292645BDAF006B3B16 /* ViewController.swift */,
-				C8C1A32B2645BDAF006B3B16 /* Main.storyboard */,
-				C8C1A32E2645BDB2006B3B16 /* Assets.xcassets */,
-				C8C1A3302645BDB2006B3B16 /* LaunchScreen.storyboard */,
 				C8C1A3332645BDB2006B3B16 /* Info.plist */,
+				C8C1A37D2645C1F1006B3B16 /* App */,
+				C8C1A35F2645BE5F006B3B16 /* Data */,
 			);
 			path = BoostTest;
 			sourceTree = "<group>";
@@ -126,6 +130,110 @@
 				C8C1A3492645BDB2006B3B16 /* Info.plist */,
 			);
 			path = BoostTestUITests;
+			sourceTree = "<group>";
+		};
+		C8C1A35F2645BE5F006B3B16 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C8C1A3602645BF46006B3B16 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A3692645BFB4006B3B16 /* Use cases */,
+				C8C1A3682645BFAD006B3B16 /* Routing */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		C8C1A3612645BF4D006B3B16 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A3742645BFEF006B3B16 /* Detail */,
+				C8C1A3622645BF6F006B3B16 /* List */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		C8C1A3622645BF6F006B3B16 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A3A82645C33F006B3B16 /* Cell */,
+				C8C1A3632645BF83006B3B16 /* ContactTableViewModel.swift */,
+				C8C1A3A12645C331006B3B16 /* ContactListVC.swift */,
+				C8C1A3A22645C331006B3B16 /* ContactListVC.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		C8C1A3682645BFAD006B3B16 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A3752645C042006B3B16 /* Routing.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		C8C1A3692645BFB4006B3B16 /* Use cases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Use cases";
+			sourceTree = "<group>";
+		};
+		C8C1A36D2645BFD5006B3B16 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A3612645BF4D006B3B16 /* Contact */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		C8C1A3742645BFEF006B3B16 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		C8C1A37D2645C1F1006B3B16 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A3B42645C464006B3B16 /* Util */,
+				C8C1A3272645BDAF006B3B16 /* SceneDelegate.swift */,
+				C8C1A3252645BDAF006B3B16 /* AppDelegate.swift */,
+				C8C1A3842645C217006B3B16 /* Resource */,
+				C8C1A3602645BF46006B3B16 /* Business */,
+				C8C1A36D2645BFD5006B3B16 /* View Controller */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C8C1A3842645C217006B3B16 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A32E2645BDB2006B3B16 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C8C1A3A82645C33F006B3B16 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A3AA2645C3D3006B3B16 /* ContactCell.swift */,
+				C8C1A3AB2645C3D3006B3B16 /* ContactCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C8C1A3B42645C464006B3B16 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A3B52645C48F006B3B16 /* TableViewCell.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +339,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C1A3322645BDB2006B3B16 /* LaunchScreen.storyboard in Resources */,
+				C8C1A3AD2645C3D3006B3B16 /* ContactCell.xib in Resources */,
 				C8C1A32F2645BDB2006B3B16 /* Assets.xcassets in Resources */,
-				C8C1A32D2645BDAF006B3B16 /* Main.storyboard in Resources */,
+				C8C1A3A42645C331006B3B16 /* ContactListVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +366,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C1A32A2645BDAF006B3B16 /* ViewController.swift in Sources */,
+				C8C1A3AC2645C3D3006B3B16 /* ContactCell.swift in Sources */,
+				C8C1A3762645C042006B3B16 /* Routing.swift in Sources */,
+				C8C1A3642645BF83006B3B16 /* ContactTableViewModel.swift in Sources */,
 				C8C1A3262645BDAF006B3B16 /* AppDelegate.swift in Sources */,
 				C8C1A3282645BDAF006B3B16 /* SceneDelegate.swift in Sources */,
+				C8C1A3B62645C48F006B3B16 /* TableViewCell.swift in Sources */,
+				C8C1A3A32645C331006B3B16 /* ContactListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,25 +406,6 @@
 			targetProxy = C8C1A3442645BDB2006B3B16 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C8C1A32B2645BDAF006B3B16 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8C1A32C2645BDAF006B3B16 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C8C1A3302645BDB2006B3B16 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8C1A3312645BDB2006B3B16 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C8C1A34A2645BDB2006B3B16 /* Debug */ = {
