@@ -19,17 +19,18 @@ class ContactCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     public func updateUI(name: String, profilePicture: UIImage?) {
         nameLabel.text = name
         
+        let pictureHeight = profileImageView.frame.size.height
+        profileImageView.layer.cornerRadius = pictureHeight / 2
+        
         if let profilePicture = profilePicture {
             profileImageView.image = profilePicture
         } else {
-            profileImageView.image = UIImage()
+            profileImageView.image = UIImage(color: AppTheme.primaryColor, size: CGSize(width: pictureHeight, height: pictureHeight))
         }
     }
 }
