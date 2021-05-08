@@ -32,7 +32,11 @@ struct ProfileService: ProfileServiceInterface {
         guard var profiles = loadJson() else { return false }
     
         for i in 0..<profiles.count {
-            if profiles[i].id == toEdit.id {
+            if profiles[i].id == toEdit.id && (
+                profiles[i].firstName != toEdit.firstName ||
+                    profiles[i].lastName != toEdit.lastName ||
+                    profiles[i].email != toEdit.email ||
+                    profiles[i].phone != toEdit.phone) {
                 profiles[i] = toEdit
                 return writeJson(profiles: profiles)
             }
@@ -50,10 +54,14 @@ struct ProfileService: ProfileServiceInterface {
     private static func writeJson(profiles: [Profile]?) -> Bool {
         do {
             guard let profiles = profiles else { return false }
-            let jsonData: NSData
-            jsonData = try JSONSerialization.data(withJSONObject: profiles, options: JSONSerialization.WritingOptions()) as NSData
-            let jsonString = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)! as String
-            print("json string = \(jsonString)")
+            
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            let orderJsonData = try! encoder.encode(profiles)
+            print(String(data: orderJsonData, encoding: .utf8)!)
+            
+            // TODO create a file manager to write and read from file
+            
             return true
         } catch _ {
             return false

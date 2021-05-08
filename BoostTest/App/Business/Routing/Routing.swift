@@ -57,6 +57,13 @@ extension UIViewController {
         }
         nvc.pushViewController(vc, animated: animated)
     }
+    
+    func popFromNVC(animated: Bool = true) {
+        guard let nvc = self.navigationController else {
+            return
+        }
+        nvc.popViewController(animated: animated)
+    }
 }
 
 extension UIWindow {
@@ -71,8 +78,17 @@ extension UIViewController {
     
     func openAddContact() {
         let vc = ContactDetailVC()
+        let vm = ContactDetailViewModel(state: .add)
+        vc.viewModel = vm
         self.pushOnNVC(vc: vc)
     }
     
+    func openEditContact(profile: Profile) {
+        let vc = ContactDetailVC()
+        let vm = ContactDetailViewModel(state: .edit)
+        vm.setProfile(profile)
+        vc.viewModel = vm
+        self.pushOnNVC(vc: vc)
+    }
   
 }
