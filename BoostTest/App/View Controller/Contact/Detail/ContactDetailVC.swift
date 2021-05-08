@@ -35,7 +35,9 @@ class ContactDetailVC: UIViewController {
         saveBarBtn.tintColor = AppTheme.primaryColor
         navigationItem.rightBarButtonItem = saveBarBtn
         
-        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
+        let profileImageViewHeight = profileImageView.frame.height
+        profileImageView.layer.cornerRadius = profileImageViewHeight / 2
+        profileImageView.image = UIImage(color: AppTheme.primaryColor, size: CGSize(width: profileImageViewHeight, height: profileImageViewHeight))
     }
 
     // MARK: -  Actions
