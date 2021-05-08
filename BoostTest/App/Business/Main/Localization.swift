@@ -18,3 +18,8 @@ public let TEXT_MAIN_INFORMATION = "Main Information"
 public let TEXT_SUB_INFOMATION = "Sub Information"
 public let TEXT_CONTACTS = "Contacts"
 public let TEXT_PULL_TO_REFRESH = "Pull to refresh"
+
+public let TEXT_FIRST_NAME_PLACEHOLDER = "Alvin"
+public let TEXT_LAST_NAME_PLACEHOLDER  = "Chong"
+public let TEXT_EMAIL_PLACEHOLDER  = "sample@gmail.com"
+public let TEXT_PHONE_NUM_PLACEHOLDER  = "(123) 456-7890"

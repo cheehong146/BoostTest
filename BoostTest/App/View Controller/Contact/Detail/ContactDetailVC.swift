@@ -45,11 +45,18 @@ class ContactDetailVC: UIViewController {
         let profileImageViewHeight = profileImageView.frame.height
         profileImageView.layer.cornerRadius = profileImageViewHeight / 2
         profileImageView.image = UIImage(color: AppTheme.primaryColor, size: CGSize(width: profileImageViewHeight, height: profileImageViewHeight))
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeybaord(_:))))
     }
 
     // MARK: -  Actions
     @objc func onCancelButtonPress(_ gesture: UITapGestureRecognizer) {
         self.popFromNVC()
+    }
+    
+    
+    @objc func dismissKeybaord(_ gesture: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     @objc func onSaveButtonPress(_ gesture: UITapGestureRecognizer) {
@@ -91,9 +98,6 @@ class ContactDetailVC: UIViewController {
             
         case .edit:
             viewModel.updateProfile(updatedProfile)
-            
-        default:
-            return
         }
         
         self.popFromNVC()
@@ -118,7 +122,29 @@ extension ContactDetailVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactDetailCell.reuseIdentifier()) as? ContactDetailCell else { return .init() }
         let field = viewModel.getFields(at: indexPath)
-        cell.updateUI(labelText: field.0, textFieldValue: field.1)
+        cell.updateUI(type: field.0, labelText: field.1, textFieldValue: field.2)
+        cell.delegate = self
         return cell
+    }
+}
+
+// MARK: - ContactDetailCellInterface
+extension ContactDetailVC: ContactDetailCellInterface {
+    
+    func onNextKeyboardPress(type: ContactDetailTableDataRow?) {
+        guard let type = type else { return }
+        guard let cell = tableView.cellForRow(at: viewModel.getIndexPath(from: type.rawValue)) as? ContactDetailCell else { return }
+        
+        switch type {
+        case .firstName, .lastName, .email:
+            cell.textField.resignFirstResponder()
+            
+            guard let nextCell = tableView.cellForRow(at: viewModel.getIndexPath(from: type.rawValue + 1)) as? ContactDetailCell else { return }
+            
+            nextCell.textField.becomeFirstResponder()
+            
+        case .phoneNum:
+            return
+        }
     }
 }

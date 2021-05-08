@@ -90,30 +90,38 @@ extension ContactDetailViewModel {
     func getNumOfRowInSection(at section: Int) -> Int {
         return tableData.numOfRowPerSection
     }
+    
+    func getRowOffset(from indexPath: IndexPath) -> Int {
+        return indexPath.section * tableData.numOfRowPerSection + indexPath.row
+    }
+    
+    func getIndexPath(from rowOffSet: Int) -> IndexPath {
+        let section = floor(Double((rowOffSet / tableData.numOfRowPerSection)))
+        let row = rowOffSet - (Int(section) * tableData.numOfRowPerSection)
+        return IndexPath(row: row, section: Int(section))
+    }
+    
     /*
      return the describing data label and its' respective value
      */
-    func getFields(at index: IndexPath) -> (String, String) {
+    func getFields(at index: IndexPath) -> (ContactDetailTableDataRow?, String, String) {
         
-        let rowOffset = index.section * tableData.numOfRowPerSection + index.row
-        
-        switch rowOffset {
+        switch getRowOffset(from: index) {
         
         case ContactDetailTableDataRow.firstName.rawValue:
-            return (TEXT_FIRST_NAME, tableData.profile?.firstName ?? "")
+            return (.firstName, TEXT_FIRST_NAME, tableData.profile?.firstName ?? "")
             
         case ContactDetailTableDataRow.lastName.rawValue:
-            return (TEXT_LAST_NAME, tableData.profile?.lastName ?? "")
+            return (.lastName, TEXT_LAST_NAME, tableData.profile?.lastName ?? "")
             
         case ContactDetailTableDataRow.email.rawValue:
-            return (TEXT_EMAIL, tableData.profile?.email ?? "")
+            return (.email, TEXT_EMAIL, tableData.profile?.email ?? "")
             
         case ContactDetailTableDataRow.phoneNum.rawValue:
-            return (TEXT_PHONE_NUM, tableData.profile?.phone ?? "")
+            return (.phoneNum, TEXT_PHONE_NUM, tableData.profile?.phone ?? "")
             
         default:
-            return("", "")
+            return(nil, "", "")
         }
     }
-    
 }
