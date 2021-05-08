@@ -37,6 +37,7 @@
 		C8C1A4332646BB2D006B3B16 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A4322646BB2D006B3B16 /* AlertViewModel.swift */; };
 		C8C1A4432646C6A2006B3B16 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A4422646C6A2006B3B16 /* Validator.swift */; };
 		C8C1A44A2646C7AD006B3B16 /* ContactDetailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A4492646C7AD006B3B16 /* ContactDetailValidator.swift */; };
+		C8C1A45C2646E315006B3B16 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A45B2646E315006B3B16 /* Localization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		C8C1A4322646BB2D006B3B16 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		C8C1A4422646C6A2006B3B16 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		C8C1A4492646C7AD006B3B16 /* ContactDetailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailValidator.swift; sourceTree = "<group>"; };
+		C8C1A45B2646E315006B3B16 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 		C8C1A3602645BF46006B3B16 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				C8C1A45A2646E309006B3B16 /* Main */,
 				C8C1A3692645BFB4006B3B16 /* Use cases */,
 				C8C1A3682645BFAD006B3B16 /* Routing */,
 			);
@@ -354,6 +357,14 @@
 			path = Contact;
 			sourceTree = "<group>";
 		};
+		C8C1A45A2646E309006B3B16 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A45B2646E315006B3B16 /* Localization.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -500,6 +511,7 @@
 				C8C1A3ED2645DCE6006B3B16 /* ProfileService.swift in Sources */,
 				C8C1A3F82645E6CD006B3B16 /* ContactDetailViewModel.swift in Sources */,
 				C8C1A3FF2645F0BC006B3B16 /* ContactDetailCell.swift in Sources */,
+				C8C1A45C2646E315006B3B16 /* Localization.swift in Sources */,
 				C8C1A4332646BB2D006B3B16 /* AlertViewModel.swift in Sources */,
 				C8C1A4432646C6A2006B3B16 /* Validator.swift in Sources */,
 				C8C1A3BB2645D2C0006B3B16 /* AppTheme.swift in Sources */,

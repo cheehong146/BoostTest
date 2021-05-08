@@ -85,10 +85,8 @@ extension UIViewController {
     
     func openEditContact(profile: Profile) {
         let vc = ContactDetailVC()
-        let vm = ContactDetailViewModel(state: .edit)
-        vm.setProfile(profile)
+        let vm = ContactDetailViewModel(state: .edit, profile: profile)
         vc.viewModel = vm
         self.pushOnNVC(vc: vc)
     }
-  
 }

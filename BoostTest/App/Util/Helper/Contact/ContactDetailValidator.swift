@@ -22,20 +22,20 @@ struct ContactDetailValidator {
             var fieldName = ""
             switch self {
             case .firstName(let isEmpty):
-                fieldName = "First Name"
-                errorMsg = isEmpty ? "%@ is required" : "Wrong Format %@"
+                fieldName = TEXT_FIRST_NAME
+                errorMsg = isEmpty ? TEXT_FIELD_IS_REQUIRED : TEXT_FIELD_FORMAT_ERROR
                 
             case .lastName(let isEmpty):
-                fieldName = "Last Name"
-                errorMsg = isEmpty ? " %@ is required" : "Wrong Format %@"
+                fieldName = TEXT_LAST_NAME
+                errorMsg = isEmpty ? TEXT_FIELD_IS_REQUIRED : TEXT_FIELD_FORMAT_ERROR
                 
             case .email:
-                fieldName = "Email"
-                errorMsg = "Wrong Format %@"
+                fieldName = TEXT_EMAIL
+                errorMsg = TEXT_FIELD_FORMAT_ERROR
                 
             case .phoneNum:
-                fieldName = "Phone Number"
-                errorMsg = "Wrong Format %@"
+                fieldName = TEXT_PHONE_NUM
+                errorMsg = TEXT_FIELD_FORMAT_ERROR
             }
             
             return String(format: errorMsg, fieldName)

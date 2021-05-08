@@ -7,39 +7,52 @@
 
 import Foundation
 
+enum ContactDetailTableDataRow: Int {
+    case firstName = 0
+    case lastName = 1
+    case email = 2
+    case phoneNum = 3
+}
+
 enum ContactDetailState {
     case add
     case edit
 }
 
+/*
+ This structure only support fixed number of row for all the sections
+ */
 struct ContactDetailTableData {
-    var sections: [Section]
-    
-    struct Section {
-        var title: String?
-        var fields: [String: String]
-    }
+    var sectionHeader: [String]
+    var numOfRowPerSection: Int
+    var profile: Profile?
 }
 
 class ContactDetailViewModel {
     
     private var state: ContactDetailState!
-    private var profile: Profile?
     private var didUpdateProfile: Bool = false
     
     // tableView related data
-    private var tableData: ContactDetailTableData?
+    private var tableData: ContactDetailTableData!
     
-    init(state: ContactDetailState) {
+    init(state: ContactDetailState, profile: Profile? = nil) {
         self.state = state
+        self.tableData =  ContactDetailTableData(sectionHeader:[
+            TEXT_MAIN_INFORMATION,
+            TEXT_SUB_INFOMATION
+            ],
+        numOfRowPerSection: 2,
+        profile: profile
+        )
     }
     
     func getProfile() -> Profile? {
-        return profile
+        return tableData?.profile
     }
     
     func setProfile(_ profile: Profile?) {
-        self.profile = profile
+        self.tableData?.profile = profile
     }
     
     func getState() -> ContactDetailState {
@@ -69,47 +82,41 @@ class ContactDetailViewModel {
 // MARK: - TableView Data provider, edit dynamic header and cell here
 extension ContactDetailViewModel {
     
-    /*
-     init dynamic section and it's field here
-     */
-    func getTableData() -> ContactDetailTableData {
-        if tableData == nil {
-            
-            let firstSection = ContactDetailTableData.Section(title: "Main Information", fields: [
-                "First Name": self.profile?.firstName ?? "",
-                "Last Name": self.profile?.lastName ?? ""
-            ])
-            let secondSection = ContactDetailTableData.Section(title: "Sub Information", fields: [
-                "Email": self.profile?.email ?? "",
-                "Phone": self.profile?.phone ?? ""
-            ])
-            self.tableData = ContactDetailTableData(sections: [firstSection, secondSection])
-        }
-        return self.tableData!
-    }
-    
     func getSectionCount() -> Int {
-        return getTableData().sections.count
+        return tableData.sectionHeader.count
     }
     
     func getSectionTitle(at index: Int) -> String {
-        return getTableData().sections[index].title ?? "-"
+        return tableData.sectionHeader[index]
     }
     
     func getNumOfRowInSection(at section: Int) -> Int {
-        return getTableData().sections[section].fields.count
+        return tableData.numOfRowPerSection
     }
     /*
      return the describing data label and its' respective value
      */
     func getFields(at index: IndexPath) -> (String, String) {
-        let dict = getTableData().sections[index.section].fields
         
-        let dictionaryIndex =  dict.index(dict.startIndex, offsetBy: index.row)
+        let rowOffset = index.section * tableData.numOfRowPerSection + index.row
         
-        let key = dict[dictionaryIndex].key
-        let val = dict[key]
-        return (key, val ?? "")
+        switch rowOffset {
+        
+        case ContactDetailTableDataRow.firstName.rawValue:
+            return (TEXT_FIRST_NAME, tableData.profile?.firstName ?? "")
+            
+        case ContactDetailTableDataRow.lastName.rawValue:
+            return (TEXT_LAST_NAME, tableData.profile?.lastName ?? "")
+            
+        case ContactDetailTableDataRow.email.rawValue:
+            return (TEXT_EMAIL, tableData.profile?.email ?? "")
+            
+        case ContactDetailTableDataRow.phoneNum.rawValue:
+            return (TEXT_PHONE_NUM, tableData.profile?.phone ?? "")
+            
+        default:
+            return("", "")
+        }
     }
     
 }
