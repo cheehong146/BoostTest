@@ -11,7 +11,6 @@ import Foundation
 protocol ProfileServiceInterface {
     static func getProfiles() -> [Profile]?
     static func editProfile(toEdit: Profile) -> Bool
-    static func deleteProfile(id: String)
 }
 
 // MARK: - ProfileService
@@ -51,16 +50,11 @@ struct ProfileService: ProfileServiceInterface {
         return false
     }
     
-    static func deleteProfile(id: String) {
-        // TODO
-    }
-    
     /*
      Return true on successful write and false otherwise
      */
     private static func writeJson(profiles: [Profile]?) -> Bool {
             guard let profiles = profiles else { return false }
-            
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
             let orderJsonData = try! encoder.encode(profiles)
@@ -74,7 +68,7 @@ struct ProfileService: ProfileServiceInterface {
         let jsonData = try decoder.decode([Profile].self, from: data)
         return jsonData
         } catch _ {
-            // TODO toast some error
+            DialogHelper.showAlert(type: .error, errorMessage: TEXT_FAILED_DECODE_JSON)
         }
         return nil
     }

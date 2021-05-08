@@ -23,3 +23,8 @@ public let TEXT_FIRST_NAME_PLACEHOLDER = "Alvin"
 public let TEXT_LAST_NAME_PLACEHOLDER  = "Chong"
 public let TEXT_EMAIL_PLACEHOLDER  = "sample@gmail.com"
 public let TEXT_PHONE_NUM_PLACEHOLDER  = "(123) 456-7890"
+
+
+public let TEXT_FAILED_READ_JSON  = "Failed to read from json file"
+public let TEXT_FAILED_WRITE_JSON  = "Failed to write to json file"
+public let TEXT_FAILED_DECODE_JSON  = "Failed to decode json"

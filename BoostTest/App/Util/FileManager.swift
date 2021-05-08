@@ -18,7 +18,7 @@ class FileManager {
                 return true
             }
         } catch {
-            print("error:\(error)")
+            DialogHelper.showAlert(type: .error, errorMessage: TEXT_FAILED_WRITE_JSON)
         }
         return false
     }
@@ -30,7 +30,7 @@ class FileManager {
                 return data
             }
         } catch {
-            print("error:\(error)")
+            DialogHelper.showAlert(type: .error, errorMessage:TEXT_FAILED_READ_JSON)
         }
         return nil
     }
