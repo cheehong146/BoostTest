@@ -26,7 +26,6 @@ struct Validator {
     public static func isValidPhoneNum(_ phoneNum: String?) -> Bool {
         guard let phoneNum = phoneNum else { return false }
         
-        _ = "(892) 456-3603"
         let phoneNumRegEx = "^\\(\\d{3}\\) \\d{3}.\\d{4}$"
 
        let phoneNumPred = NSPredicate(format:"SELF MATCHES %@", phoneNumRegEx)

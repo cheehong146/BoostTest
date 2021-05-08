@@ -72,7 +72,6 @@ struct ProfileService: ProfileServiceInterface {
         let decoder = JSONDecoder()
         do {
         let jsonData = try decoder.decode([Profile].self, from: data)
-            print("😀 \(jsonData.count)")
         return jsonData
         } catch _ {
             // TODO toast some error
