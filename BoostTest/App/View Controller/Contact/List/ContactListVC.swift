@@ -54,4 +54,9 @@ extension ContactListVC: UITableViewDelegate, UITableViewDataSource {
         cell.updateUI(name: "\(profile.firstName ?? "") \(profile.lastName ?? "")", profilePicture: nil)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let profile = viewModel.getListOfContacts()[indexPath.row]
+        self.openEditContact(profile: profile)
+    }
 }

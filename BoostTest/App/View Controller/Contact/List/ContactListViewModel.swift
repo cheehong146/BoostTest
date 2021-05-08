@@ -8,10 +8,15 @@
 
 import Foundation
 
-struct ContactListViewModel {
+class ContactListViewModel {
+    
+    var listOfContacts: [Profile]?
     
     // MARK: - Data provider
     func getListOfContacts() -> [Profile] {
-        return ProfileService.getProfiles() ?? []
+        if listOfContacts == nil {
+            self.listOfContacts = ProfileService.getProfiles() ?? []
+        }
+        return listOfContacts ?? []
     }
 }

@@ -26,6 +26,9 @@
 		C8C1A3DE2645DC10006B3B16 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A3DD2645DC10006B3B16 /* data.json */; };
 		C8C1A3E42645DC41006B3B16 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3E32645DC41006B3B16 /* Profile.swift */; };
 		C8C1A3ED2645DCE6006B3B16 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3EC2645DCE6006B3B16 /* ProfileService.swift */; };
+		C8C1A3F82645E6CD006B3B16 /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3F72645E6CD006B3B16 /* ContactDetailViewModel.swift */; };
+		C8C1A3FF2645F0BC006B3B16 /* ContactDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3FD2645F0BC006B3B16 /* ContactDetailCell.swift */; };
+		C8C1A4002645F0BC006B3B16 /* ContactDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A3FE2645F0BC006B3B16 /* ContactDetailCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		C8C1A3DD2645DC10006B3B16 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		C8C1A3E32645DC41006B3B16 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		C8C1A3EC2645DCE6006B3B16 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		C8C1A3F72645E6CD006B3B16 /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
+		C8C1A3FD2645F0BC006B3B16 /* ContactDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailCell.swift; sourceTree = "<group>"; };
+		C8C1A3FE2645F0BC006B3B16 /* ContactDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDetailCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,8 +216,10 @@
 		C8C1A3742645BFEF006B3B16 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				C8C1A3FC2645F0A4006B3B16 /* Cell */,
 				C8C1A3D02645D8BE006B3B16 /* ContactDetailVC.swift */,
 				C8C1A3D12645D8BE006B3B16 /* ContactDetailVC.xib */,
+				C8C1A3F72645E6CD006B3B16 /* ContactDetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -271,6 +279,15 @@
 				C8C1A3EC2645DCE6006B3B16 /* ProfileService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C8C1A3FC2645F0A4006B3B16 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A3FD2645F0BC006B3B16 /* ContactDetailCell.swift */,
+				C8C1A3FE2645F0BC006B3B16 /* ContactDetailCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +396,7 @@
 				C8C1A3D32645D8BE006B3B16 /* ContactDetailVC.xib in Resources */,
 				C8C1A3AD2645C3D3006B3B16 /* ContactCell.xib in Resources */,
 				C8C1A32F2645BDB2006B3B16 /* Assets.xcassets in Resources */,
+				C8C1A4002645F0BC006B3B16 /* ContactDetailCell.xib in Resources */,
 				C8C1A3DE2645DC10006B3B16 /* data.json in Resources */,
 				C8C1A3A42645C331006B3B16 /* ContactListVC.xib in Resources */,
 			);
@@ -411,6 +429,8 @@
 				C8C1A3262645BDAF006B3B16 /* AppDelegate.swift in Sources */,
 				C8C1A3282645BDAF006B3B16 /* SceneDelegate.swift in Sources */,
 				C8C1A3ED2645DCE6006B3B16 /* ProfileService.swift in Sources */,
+				C8C1A3F82645E6CD006B3B16 /* ContactDetailViewModel.swift in Sources */,
+				C8C1A3FF2645F0BC006B3B16 /* ContactDetailCell.swift in Sources */,
 				C8C1A3BB2645D2C0006B3B16 /* AppTheme.swift in Sources */,
 				C8C1A3C02645D593006B3B16 /* UIImage.swift in Sources */,
 				C8C1A3B62645C48F006B3B16 /* TableViewCell.swift in Sources */,

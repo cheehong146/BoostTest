@@ -13,6 +13,8 @@ class ContactDetailVC: UIViewController {
     @IBOutlet weak var profileImageView : UIImageView!
     @IBOutlet weak var tableView        : UITableView!
     
+    var viewModel: ContactDetailViewModel!
+    
     // MARK: -  Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +23,10 @@ class ContactDetailVC: UIViewController {
     }
     
     private func setupView() {
-        self.title = "Contacts"
         
         tableView.delegate = self
         tableView.dataSource = self
+        ContactDetailCell.registerNibCell(tableView)
         
         // Bar button
         let cancelBarBtn = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(onCancelButtonPress))
@@ -42,13 +44,31 @@ class ContactDetailVC: UIViewController {
 
     // MARK: -  Actions
     @objc func onCancelButtonPress(_ gesture: UITapGestureRecognizer) {
-        // TODO cancel/dismiss action
-        print("😀")
+        self.popFromNVC()
     }
     
     @objc func onSaveButtonPress(_ gesture: UITapGestureRecognizer) {
-        // TODO save contact action
-        print("😀")
+        var updatedFieldData: [String] = []
+       
+        
+        for sectionIndex in 0..<viewModel.getSectionCount() {
+            for rowIndex in 0..<viewModel.getNumOfRowInSection(at: sectionIndex) {
+                guard let cell = tableView.cellForRow(at: IndexPath(row: rowIndex, section: sectionIndex)) as? ContactDetailCell else { return }
+                updatedFieldData.append(cell.textField.text ?? "")
+            }
+        }
+        
+        
+        let id = viewModel.getState() == .add ? viewModel.generateNounceID(): viewModel.getProfile()?.id
+        let updatedProfile = Profile(
+            id: id ?? "",
+            firstName: updatedFieldData[0],
+            lastName: updatedFieldData[1],
+            email: updatedFieldData[2],
+            phone: updatedFieldData[3])
+        
+        viewModel.updateProfile(updatedProfile)
+        self.popFromNVC()
     }
 }
 
@@ -56,16 +76,21 @@ class ContactDetailVC: UIViewController {
 extension ContactDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        // TODO get data from VM
-        return 2
+        return viewModel.getSectionCount()
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.getSectionTitle(at: section)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO get data from VM
-        return 3
+        return viewModel.getNumOfRowInSection(at: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return .init()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactDetailCell.reuseIdentifier()) as? ContactDetailCell else { return .init() }
+        let field = viewModel.getFields(at: indexPath)
+        cell.updateUI(labelText: field.0, textFieldValue: field.1)
+        return cell
     }
 }
