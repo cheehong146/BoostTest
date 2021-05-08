@@ -18,6 +18,7 @@ protocol ProfileServiceInterface {
 struct ProfileService: ProfileServiceInterface {
     
     static let dataSourceFileName = "data"
+    static let dataSourceFileExtension = "json"
     
     // MARK: - Services
     static func getProfiles() -> [Profile]? {
@@ -52,32 +53,23 @@ struct ProfileService: ProfileServiceInterface {
      Return true on successful write and false otherwise
      */
     private static func writeJson(profiles: [Profile]?) -> Bool {
-        do {
             guard let profiles = profiles else { return false }
             
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
             let orderJsonData = try! encoder.encode(profiles)
-            print(String(data: orderJsonData, encoding: .utf8)!)
             
-            // TODO create a file manager to write and read from file
-            
-            return true
-        } catch _ {
-            return false
-        }
+            return FileManager.shared.writeTo(data: orderJsonData, fileName: dataSourceFileName, fileNameExtension: dataSourceFileExtension)
     }
     
     private static func loadJson() -> [Profile]? {
-        if let url = Bundle.main.url(forResource: dataSourceFileName, withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: url)
-                let decoder = JSONDecoder()
-                let jsonData = try decoder.decode([Profile].self, from: data)
-                return jsonData
-            } catch {
-                print("error:\(error)")
-            }
+        guard let data = FileManager.shared.readFrom(fileName: dataSourceFileName, fileNameExtension: dataSourceFileExtension) else { return nil }
+        let decoder = JSONDecoder()
+        do {
+        let jsonData = try decoder.decode([Profile].self, from: data)
+        return jsonData
+        } catch _ {
+            // TODO toast some error
         }
         return nil
     }
