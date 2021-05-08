@@ -30,6 +30,7 @@
 		C8C1A3FF2645F0BC006B3B16 /* ContactDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A3FD2645F0BC006B3B16 /* ContactDetailCell.swift */; };
 		C8C1A4002645F0BC006B3B16 /* ContactDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A3FE2645F0BC006B3B16 /* ContactDetailCell.xib */; };
 		C8C1A408264696C6006B3B16 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A407264696C6006B3B16 /* FileManager.swift */; };
+		C8C1A40D26469C35006B3B16 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A40C26469C35006B3B16 /* Security.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		C8C1A3FD2645F0BC006B3B16 /* ContactDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailCell.swift; sourceTree = "<group>"; };
 		C8C1A3FE2645F0BC006B3B16 /* ContactDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDetailCell.xib; sourceTree = "<group>"; };
 		C8C1A407264696C6006B3B16 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		C8C1A40C26469C35006B3B16 /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 				C8C1A3B52645C48F006B3B16 /* TableViewCell.swift */,
 				C8C1A3BF2645D593006B3B16 /* UIImage.swift */,
 				C8C1A407264696C6006B3B16 /* FileManager.swift */,
+				C8C1A40C26469C35006B3B16 /* Security.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C1A408264696C6006B3B16 /* FileManager.swift in Sources */,
+				C8C1A40D26469C35006B3B16 /* Security.swift in Sources */,
 				C8C1A3AC2645C3D3006B3B16 /* ContactCell.swift in Sources */,
 				C8C1A3762645C042006B3B16 /* Routing.swift in Sources */,
 				C8C1A3642645BF83006B3B16 /* ContactListViewModel.swift in Sources */,

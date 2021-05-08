@@ -47,11 +47,18 @@ class ContactDetailViewModel {
     }
     
     func updateProfile(_ editedProfile: Profile)  {
-        _ = ProfileService.editProfile(toEdit: editedProfile)
+        switch state {
+        case .add:
+            _ = ProfileService.addProfile(toAdd: editedProfile)
+        case .edit:
+            _ = ProfileService.editProfile(toEdit: editedProfile)
+        default:
+            return
+        }
     }
     
     func generateNounceID() -> String {
-        return "123"
+        return Security.generateNounceID()
     }
 }
 
@@ -98,7 +105,6 @@ extension ContactDetailViewModel {
         
         let key = dict[dictionaryIndex].key
         let val = dict[key]
-        print("😀: \(key) \(val)")
         return (key, val ?? "")
     }
     
