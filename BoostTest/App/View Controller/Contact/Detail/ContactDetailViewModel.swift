@@ -60,6 +60,10 @@ class ContactDetailViewModel {
     func generateNounceID() -> String {
         return Security.generateNounceID()
     }
+    
+    func validateProfile(_ profile: Profile) throws {
+        try ContactDetailValidator.validateContactDetail(profile)
+    }
 }
 
 // MARK: - TableView Data provider, edit dynamic header and cell here

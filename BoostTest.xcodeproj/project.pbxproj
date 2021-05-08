@@ -31,6 +31,12 @@
 		C8C1A4002645F0BC006B3B16 /* ContactDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A3FE2645F0BC006B3B16 /* ContactDetailCell.xib */; };
 		C8C1A408264696C6006B3B16 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A407264696C6006B3B16 /* FileManager.swift */; };
 		C8C1A40D26469C35006B3B16 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A40C26469C35006B3B16 /* Security.swift */; };
+		C8C1A4232646B891006B3B16 /* DialogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A4222646B891006B3B16 /* DialogHelper.swift */; };
+		C8C1A4292646B911006B3B16 /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A4272646B911006B3B16 /* AlertVC.swift */; };
+		C8C1A42A2646B911006B3B16 /* AlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C1A4282646B911006B3B16 /* AlertVC.xib */; };
+		C8C1A4332646BB2D006B3B16 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A4322646BB2D006B3B16 /* AlertViewModel.swift */; };
+		C8C1A4432646C6A2006B3B16 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A4422646C6A2006B3B16 /* Validator.swift */; };
+		C8C1A44A2646C7AD006B3B16 /* ContactDetailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C1A4492646C7AD006B3B16 /* ContactDetailValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +87,12 @@
 		C8C1A3FE2645F0BC006B3B16 /* ContactDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDetailCell.xib; sourceTree = "<group>"; };
 		C8C1A407264696C6006B3B16 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		C8C1A40C26469C35006B3B16 /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
+		C8C1A4222646B891006B3B16 /* DialogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelper.swift; sourceTree = "<group>"; };
+		C8C1A4272646B911006B3B16 /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
+		C8C1A4282646B911006B3B16 /* AlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertVC.xib; sourceTree = "<group>"; };
+		C8C1A4322646BB2D006B3B16 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
+		C8C1A4422646C6A2006B3B16 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		C8C1A4492646C7AD006B3B16 /* ContactDetailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +243,7 @@
 		C8C1A37D2645C1F1006B3B16 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C8C1A4212646B882006B3B16 /* Helper */,
 				C8C1A3B42645C464006B3B16 /* Util */,
 				C8C1A3272645BDAF006B3B16 /* SceneDelegate.swift */,
 				C8C1A3252645BDAF006B3B16 /* AppDelegate.swift */,
@@ -263,10 +276,13 @@
 		C8C1A3B42645C464006B3B16 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				C8C1A4472646C79B006B3B16 /* Helper */,
+				C8C1A4412646C68C006B3B16 /* Validator */,
 				C8C1A3B52645C48F006B3B16 /* TableViewCell.swift */,
 				C8C1A3BF2645D593006B3B16 /* UIImage.swift */,
 				C8C1A407264696C6006B3B16 /* FileManager.swift */,
 				C8C1A40C26469C35006B3B16 /* Security.swift */,
+				C8C1A42E2646B916006B3B16 /* AlertVC */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -294,6 +310,48 @@
 				C8C1A3FE2645F0BC006B3B16 /* ContactDetailCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C8C1A4212646B882006B3B16 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A4222646B891006B3B16 /* DialogHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C8C1A42E2646B916006B3B16 /* AlertVC */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A4272646B911006B3B16 /* AlertVC.swift */,
+				C8C1A4282646B911006B3B16 /* AlertVC.xib */,
+				C8C1A4322646BB2D006B3B16 /* AlertViewModel.swift */,
+			);
+			path = AlertVC;
+			sourceTree = "<group>";
+		};
+		C8C1A4412646C68C006B3B16 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A4422646C6A2006B3B16 /* Validator.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		C8C1A4472646C79B006B3B16 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A4482646C7A0006B3B16 /* Contact */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C8C1A4482646C7A0006B3B16 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1A4492646C7AD006B3B16 /* ContactDetailValidator.swift */,
+			);
+			path = Contact;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +463,7 @@
 				C8C1A4002645F0BC006B3B16 /* ContactDetailCell.xib in Resources */,
 				C8C1A3DE2645DC10006B3B16 /* data.json in Resources */,
 				C8C1A3A42645C331006B3B16 /* ContactListVC.xib in Resources */,
+				C8C1A42A2646B911006B3B16 /* AlertVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +491,8 @@
 				C8C1A408264696C6006B3B16 /* FileManager.swift in Sources */,
 				C8C1A40D26469C35006B3B16 /* Security.swift in Sources */,
 				C8C1A3AC2645C3D3006B3B16 /* ContactCell.swift in Sources */,
+				C8C1A44A2646C7AD006B3B16 /* ContactDetailValidator.swift in Sources */,
+				C8C1A4292646B911006B3B16 /* AlertVC.swift in Sources */,
 				C8C1A3762645C042006B3B16 /* Routing.swift in Sources */,
 				C8C1A3642645BF83006B3B16 /* ContactListViewModel.swift in Sources */,
 				C8C1A3262645BDAF006B3B16 /* AppDelegate.swift in Sources */,
@@ -439,7 +500,10 @@
 				C8C1A3ED2645DCE6006B3B16 /* ProfileService.swift in Sources */,
 				C8C1A3F82645E6CD006B3B16 /* ContactDetailViewModel.swift in Sources */,
 				C8C1A3FF2645F0BC006B3B16 /* ContactDetailCell.swift in Sources */,
+				C8C1A4332646BB2D006B3B16 /* AlertViewModel.swift in Sources */,
+				C8C1A4432646C6A2006B3B16 /* Validator.swift in Sources */,
 				C8C1A3BB2645D2C0006B3B16 /* AppTheme.swift in Sources */,
+				C8C1A4232646B891006B3B16 /* DialogHelper.swift in Sources */,
 				C8C1A3C02645D593006B3B16 /* UIImage.swift in Sources */,
 				C8C1A3B62645C48F006B3B16 /* TableViewCell.swift in Sources */,
 				C8C1A3E42645DC41006B3B16 /* Profile.swift in Sources */,

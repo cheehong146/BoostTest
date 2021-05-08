@@ -67,6 +67,17 @@ class ContactDetailVC: UIViewController {
             email: updatedFieldData[2],
             phone: updatedFieldData[3])
         
+        do {
+            try viewModel.validateProfile(updatedProfile)
+        } catch {
+            if let error = error as? ContactDetailError {
+                DialogHelper.showAlert(type: .notice, errorMessage: error.errorMessage)
+            } else {
+                DialogHelper.showAlert(type: .notice, errorMessage: error.localizedDescription)
+            }
+            return
+        }
+        
         viewModel.updateProfile(updatedProfile)
         self.popFromNVC()
     }
