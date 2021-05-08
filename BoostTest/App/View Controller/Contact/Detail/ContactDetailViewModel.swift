@@ -59,15 +59,12 @@ class ContactDetailViewModel {
         return self.state
     }
     
+    func addProfile(_ newProfile: Profile) {
+        _ = ProfileService.addProfile(toAdd: newProfile)
+    }
+    
     func updateProfile(_ editedProfile: Profile)  {
-        switch state {
-        case .add:
-            _ = ProfileService.addProfile(toAdd: editedProfile)
-        case .edit:
-            _ = ProfileService.editProfile(toEdit: editedProfile)
-        default:
-            return
-        }
+        _ = ProfileService.editProfile(toEdit: editedProfile)
     }
     
     func generateNounceID() -> String {

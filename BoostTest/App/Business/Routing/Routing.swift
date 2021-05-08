@@ -76,10 +76,11 @@ extension UIWindow {
 
 extension UIViewController {
     
-    func openAddContact() {
+    func openAddContact(fromVC: ContactListVC) {
         let vc = ContactDetailVC()
         let vm = ContactDetailViewModel(state: .add)
         vc.viewModel = vm
+        vc.delegate = fromVC
         self.pushOnNVC(vc: vc)
     }
     

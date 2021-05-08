@@ -26,7 +26,7 @@ class ContactListVC: UIViewController {
     }
     
     private func setupView() {
-        self.title = "Contacts"
+        self.title = TEXT_CONTACTS
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -36,18 +36,17 @@ class ContactListVC: UIViewController {
         addContactBarBtn.tintColor = AppTheme.primaryColor
         navigationItem.rightBarButtonItem = addContactBarBtn
         
-        
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.attributedTitle = NSAttributedString(string: TEXT_PULL_TO_REFRESH)
            refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-           tableView.addSubview(refreshControl) // not required when using UITableViewController
+           tableView.addSubview(refreshControl)
     }
     
     // MARK: -  Actions
     @objc func onAddContactBtnPress(_ gesture: UITapGestureRecognizer) {
-        self.openAddContact()
+        self.openAddContact(fromVC: self)
     }
     
-    @objc func refresh(_ gesture: UITapGestureRecognizer) {
+    @objc func refresh(_ gesture: UITapGestureRecognizer?) {
         self.tableView.reloadData()
     }
 }
@@ -72,6 +71,12 @@ extension ContactListVC: UITableViewDelegate, UITableViewDataSource {
         self.openEditContact(profile: profile)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+// MARK: - ContactDetailInterface
+extension ContactListVC: ContactDetailInterface {
     
-    
+    func didAddNewContact() {
+        refresh(nil)
+    }
 }

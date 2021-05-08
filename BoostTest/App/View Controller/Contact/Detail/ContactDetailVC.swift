@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ContactDetailInterface {
+    func didAddNewContact()
+}
+
 class ContactDetailVC: UIViewController {
 
     // MARK: -  IBOutlets
@@ -14,6 +18,7 @@ class ContactDetailVC: UIViewController {
     @IBOutlet weak var tableView        : UITableView!
     
     var viewModel: ContactDetailViewModel!
+    var delegate: ContactDetailInterface?
     
     // MARK: -  Lifecycle
     override func viewDidLoad() {
@@ -78,7 +83,19 @@ class ContactDetailVC: UIViewController {
             return
         }
         
-        viewModel.updateProfile(updatedProfile)
+        switch viewModel.getState() {
+        
+        case .add:
+            viewModel.addProfile(updatedProfile)
+            self.delegate?.didAddNewContact()
+            
+        case .edit:
+            viewModel.updateProfile(updatedProfile)
+            
+        default:
+            return
+        }
+        
         self.popFromNVC()
     }
 }
