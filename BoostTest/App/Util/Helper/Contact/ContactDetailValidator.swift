@@ -63,14 +63,14 @@ struct ContactDetailValidator {
         }
         
         // Email
-        if let email = profile.email {
+        if let email = profile.email, !email.isEmpty {
             if !Validator.isValidEmail(email) {
                 throw ContactDetailError.email
             }
         }
         
         // Phone Num
-        if let phoneNum = profile.phone {
+        if let phoneNum = profile.phone, !phoneNum.isEmpty {
             if !Validator.isValidPhoneNum(phoneNum) {
                 throw ContactDetailError.phoneNum
             }
