@@ -25,11 +25,17 @@ struct ProfileService: ProfileServiceInterface {
         return loadJson()
     }
     
+    static func addProfile(toAdd: Profile) -> Bool {
+        guard var profiles = loadJson() else { return false }
+        
+        profiles.append(toAdd)
+        return writeJson(profiles: profiles)
+    }
+    
     /*
      Return true on successful edit and false otherwise
      */
     static func editProfile(toEdit: Profile) -> Bool {
-        
         guard var profiles = loadJson() else { return false }
     
         for i in 0..<profiles.count {
@@ -58,7 +64,6 @@ struct ProfileService: ProfileServiceInterface {
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
             let orderJsonData = try! encoder.encode(profiles)
-            
             return FileManager.shared.writeTo(data: orderJsonData, fileName: dataSourceFileName, fileNameExtension: dataSourceFileExtension)
     }
     
@@ -67,6 +72,7 @@ struct ProfileService: ProfileServiceInterface {
         let decoder = JSONDecoder()
         do {
         let jsonData = try decoder.decode([Profile].self, from: data)
+            print("😀 \(jsonData.count)")
         return jsonData
         } catch _ {
             // TODO toast some error
